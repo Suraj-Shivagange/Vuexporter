@@ -1,0 +1,20 @@
+receivers:
+  nop:
+  
+processors:
+  nop:
+  
+exporters:
+  vusmartmaps:
+    apm_server_url: https://vusmartmaps.example.com
+  vusmartmaps/customname:
+    apm_server_url: https://vusmartmaps.example.com
+    api_key: RTNxMjlXNEJt
+    secret_token: hunter2
+
+service:
+  pipelines:
+    traces:
+      receivers: [nop]
+      processors: [nop]
+      exporters: [vusmartmaps]
